@@ -1,4 +1,11 @@
-import Navbar from "./components/Navbar"
+import { Manrope } from 'next/font/google'
+import Navbar from '@/Components/Navbar'
+import './globals.css'
+
+const manrope = Manrope({ 
+  subsets: ['latin'],
+  weight: ['400', '600'], 
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -6,10 +13,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
-      <body className='bg-[#FFF8EE] px-40 pt-12'>
+      <body className={`bg-[#FFF8EE] ${manrope.className}  px-40 pt-12`}>
         <Navbar />
         {children}
       </body>
